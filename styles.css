@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'Humanist 521';
+    src: url('./fonts/Humanist521BT-Roman.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Plantin STD';
+    src: url('./fonts/PlantinStd-Light.otf') format('opentype');
+  }
+  
+  body {
+      margin: 0;
+  }
+  
+  custom-product {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 1440px;
+      margin: 28px auto;
+      font-family: 'Humanist 521';
+  }
+  
+  .product__images {
+      display: grid;
+      grid-template-rows: [start] 1fr [center] 1fr [end];
+  }
+  
+  .product-images__thumbnails {
+      grid-row: center / end;
+  }
+  
+  .product-image-thumbnail {
+      cursor: pointer;
+  }
+  
+  .product-image-thumbnail img {
+      display: block;
+      width: 100%;
+  }
+  
+  .product-image-thumbnail.current {
+      border: 1px solid #111111;
+  }
+  
+  .product-images__main-image {
+      grid-row: start / center;
+  }
+  
+  .product-images__main-image img {
+      width: 100%;
+  }
+  
+  .product__details {
+      margin: 0 28px 0 40px;
+  }
+  
+  .product-details__meta {
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #AAAAAA;
+  }
+  
+  .product-details-meta__title {
+      font-family: 'Plantin STD';
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 39.6px;
+      margin: 40px 0 12px;
+  }
+  
+  .product-details-meta__price {
+      font-size: 18px;
+      line-height: 27px;
+  }
+  
+  .variant-option__label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 28.08px;
+      color: #111111;
+  }
+  
+  .variant-option__label .current-value {
+      font-size: 18px;
+      line-height: 28.08px;
+      color: #111111;
+      opacity: 0.7;
+  }
+  
+  .variant-option__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+  }
+  
+  .variant-option__list--2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .variant-option__button {
+      display: block;
+      appearance: none;
+      background: none;
+      border: 1px solid rgba(17, 17, 17, 0.2);
+      padding: 4px;
+      cursor: pointer;
+  }
+  
+  .variant-option__button.current {
+      border: 2px solid #111111;
+  }
+  
+  .variant-option__button.disabled {
+      background-color: rgba(17, 17, 17, 0.04);
+      border: none;
+      opacity: 0.6;
+      text-decoration: line-through;
+  }
+  
+  .variant-option__button img {
+      display: block;
+      width: 50px;
+  }
+  
+  .variant-option__list--2 .variant-option__button {
+      font-family: 'Humanist 521';
+      font-size: 18px;
+      line-height: 28.08px;
+      padding: 6px;
+  }
+  
+  .product-details-variant__add-to-cart {
+      margin-top: 40px;
+  }
+  
+  .add-to-cart__button {
+      display: block;
+      appearance: none;
+      background-color: #111111;
+      color: #FFFFFF;
+      border: none;
+      font-size: 14px;
+      line-height: 19.6px;
+      padding: 14px;
+      width: 100%;
+      text-transform: uppercase;
+  }
+  
+  @media only screen and (min-width: 769px) {
+      custom-product {
+          grid-template-columns: 60% 40%;
+      }
+  
+      .product__images {
+          grid-template-columns: [start] 28px [thumbnail] min(78px, 10%) [thumbnail-end] 40px [image] auto [image-end];
+          grid-template-rows: auto;
+      }
+  
+       .product-images__thumbnails {
+          display: grid;
+          gap: 12px;
+          grid-auto-rows: min-content;
+          grid-column: thumbnail/thumbnail-end;
+          grid-row: auto;
+      }
+  
+      .product-images__main-image {
+          grid-column: image / image-end;
+          grid-row: auto;
+      }
+  }
+  
