@@ -128,10 +128,12 @@ class Product extends HTMLElement {
         this.selectors = {
             mainImage: '.product-images__main-image img',
             thumbnail: '.product-image-thumbnail',
-            variantOptionButton: '.variant-option__button',
-            currentVariantOptionButton: '.variant-option__button.current',
+            variantOptionContainer: '.product-details-variant__variant-option',
             variantOptionList1: '.variant-option__list--1',
             variantOptionList2: '.variant-option__list--2',
+            variantOptionLabelCurrentValue: '.variant-option__label .current-value',
+            variantOptionButton: '.variant-option__button',
+            currentVariantOptionButton: '.variant-option__button.current',
             addToCartButton: '.add-to-cart__button'
         }
 
@@ -173,6 +175,7 @@ class Product extends HTMLElement {
 
     handleVariantClick(e) {
         const $this = e.currentTarget;
+        const variantOptionContainer = $this.closest(this.selectors.variantOptionContainer);
         let option1, option2, options;
         
         if ($this.closest(this.selectors.variantOptionList1) !== null) {
@@ -187,6 +190,7 @@ class Product extends HTMLElement {
 
         this.removeClassFromElements(options, this.classes.current);
         $this.classList.add(this.classes.current);
+        variantOptionContainer.querySelector(this.selectors.variantOptionLabelCurrentValue).textContent = $this.dataset.value;
 
         const variant = option1 + " - " + option2;
         const available = this.variants[variant].available;
