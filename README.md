@@ -10,7 +10,11 @@ You can can visit the page [here](https://jakeolney.github.io/fluorescent-challe
 
 ### Responsiveness
 
-Unfortunately, due to time contraints, I wasn't able to make things repsonsive. I felt that priority should be placed on making at least one version (ie. desktop vs. mobile) the best it could be, so I started with desktop as that's the mock-up that was provided. That said, I did start out building the main structure with the intention of making things repsonsive, so there are some initial considerations included.
+Unfortunately, due to time contraints, I wasn't able to make things repsonsive. I felt that priority should be placed on making at least one version (ie. desktop vs. mobile) the best it could be, so I started with desktop as that's the mock-up that was provided. That said, I did start out building the main structure with the intention of making things repsonsive, so there are some initial considerations included. The idea was to have the following:
+
+  - Main image (full-width)
+  - Image thumbnails (vertical layout - full-width)
+  - Product information (full-width)
 
 ### Variant selection
 
